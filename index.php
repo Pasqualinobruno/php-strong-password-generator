@@ -8,7 +8,7 @@ Creare un form che invii in GET la lunghezza della password. Una nostra funzione
 Milestone 2
 Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
 */
-var_dump($_GET['lettere'], $_GET['numeri'], $_GET['caratteri_speciali']);
+//var_dump($_GET['lettere'], $_GET['numeri'], $_GET['caratteri_speciali']);
 ?>
 
 <!DOCTYPE html>
