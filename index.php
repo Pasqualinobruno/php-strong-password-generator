@@ -8,6 +8,7 @@ Creare un form che invii in GET la lunghezza della password. Una nostra funzione
 Milestone 2
 Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
 */
+var_dump($_GET['lettere'], $_GET['numeri'], $_GET['caratteri_speciali']);
 ?>
 
 <!DOCTYPE html>
@@ -26,18 +27,35 @@ Verificato il corretto funzionamento del nostro codice, spostiamo la logica in u
             <p style="color: red;"><?php echo $errorMessage; ?></p>
         <?php endif; ?>
 
-        <form action="" method="get">
-            <label for="password_length">Lunghezza Password:</label>
-            <input type="number" name="password_length" id="password_length" required>
+        
+
+        <form action="./password.php" method="get">
+            <div>
+                <label for="password_length">Lunghezza Password:</label>
+                <input type="number" name="password_length" id="password_length" required>
+            </div>
+            <h4>Seleziona i parametri della tua password</h4>
+            <div>
+                <label for="lettere">lettere</label>
+                <input type="checkbox" id="lettere" name="lettere" checked>
+            </div>
+            <div>
+                <label for="numeri">Numeri</label>
+                <input type="checkbox" id="numeri" name="numeri" checked>
+            </div>
+            <div>
+                <label for="caratteri_speciali">Caratteri speciali</label>
+                <input type="checkbox" id="caratteri_speciali" name="caratteri_speciali" checked>
+            </div>
+            
+            
+            
+           
+           
             <button type="submit" class="btn btn-primary">Genera Password Casuale</button>
         </form>
 
-        <br>
-
-        <?php if (isset($randomPassword)): ?>
-            <h3>Password Casuale Generata:</h3>
-            <p><?php echo $randomPassword; ?></p>
-        <?php endif; ?>
+    
     </div>
 </body>
 </html>
@@ -50,5 +68,11 @@ Verificato il corretto funzionamento del nostro codice, spostiamo la logica in u
     }
     h3{
         color: red;
+    }
+    form{
+        padding: 2rem;
+        div{
+            margin-bottom: 1rem
+        }
     }
 </style>
